@@ -3,12 +3,12 @@
 [LazyVim Documentation](https://www.lazyvim.org/installation)
 
 ## Issues / Plugins that need a second look
-### open and new folder and observe the error
-### `<leader>`+`s`+`t` -- fix TODO plugin 6:06 min
+### open and new folder and observe the error -- does not occur anymore
 
 
-### Remap p so that it pastes like `ctrl`+`shift`+`p`
-#### yank and paste behavior needs to be fixed
+
+# Fix unexpected behavior
+## paste like insert aka `ctrl`+`shift`+`v`
 
 In `lua/config/keymaps.lua`
 
