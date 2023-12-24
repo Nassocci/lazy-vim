@@ -85,13 +85,18 @@ Treesitter is a file explorer
 ###  `<leader>`+`cm` -- Mason 
 ### `<leader>`+`cr` -- rename
 ### `K` shows type information -- Hover information
-### `<leader>`+`x`+`x` -- View diagnostic
 ### `<leader>`+`c`+`a` -- execute code action
 ![[Pasted image 20231224130613.png]]
-### `<leader>`+`f`+`b` -- toggle between buffers
-aka. switch windows
+### `<leader>`+`f`+`b` -- toggle between buffers aka switch windows
 #### `[`+`b` -- go to left buffer 
 #### `]`+`b` -- go to right buffer
+
+## Search buffer
+
+### `<leader>`+`s`+`b` -- search buffer aka current file
+
+
+## Search and Replace with Nvim Spectre
 
 ### `<leader>`+`s`+`r` -- global search and replace --uses Spectre plugin
 #### `d`+`d` -- to delete current item -- meaning you do not change it
@@ -127,3 +132,10 @@ it is a capital C
 
 ## Toggle
 ### `<leader>`+`u`+`l` -- toggle line numbers on and off
+
+## Diagnostic
+### `<leader>`+`d`+`o` -- diagnostic open float window
+### `<leader>`+`d`+`p` -- go to previous diagnostic error
+### `<leader>`+`d`+`n` -- go to next diagnostic error
+### `<leader>`+`d`+`d` -- open diagnostic in telescope window
+### `<leader>`+`x`+`x` -- View diagnostic
