@@ -121,9 +121,6 @@ vim.keymap.set("n", "<Space>bw", "<Cmd>BufferOrderByWindowNumber<CR>", opts)
 -- barbar.nvim #END
 
 -- Sam's Keymaps
-vim.keymap.set("n", "P", function()
-  vim.cmd("put")
-end)
 
 vim.api.nvim_set_keymap(
   "n",
@@ -143,3 +140,13 @@ vim.keymap.set("n", "<C-k>", "<Cmd>NvimTmuxNavigateUp<CR>", { silent = true })
 vim.keymap.set("n", "<C-l>", "<Cmd>NvimTmuxNavigateRight<CR>", { silent = true })
 vim.keymap.set("n", "<C-\\>", "<Cmd>NvimTmuxNavigateLastActive<CR>", { silent = true })
 vim.keymap.set("n", "<C-Space>", "<Cmd>NvimTmuxNavigateNavigateNext<CR>", { silent = true })
+
+-- markdown-preview
+vim.keymap.set("n", "<C-s>", "<Cmd>MarkdownPreview<CR>", { silent = true })
+-- "<M" - The meta key is another name for the alt key. This is akin to how the Windows key is called the super key in the Linux world.
+vim.keymap.set("n", "<M-s>", "<Cmd>MarkdownPreviewStop<CR>", { silent = true })
+vim.keymap.set("n", "<C-p>", "<Cmd>MarkdownPreviewToogle<CR>", { silent = true })
+
+vim.keymap.set("n", "P", function()
+  vim.cmd("put")
+end)

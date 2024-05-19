@@ -1,6 +1,6 @@
-[YT Guide](https://www.youtube.com/watch?v=N93cTbtLCIM)
+# [YT Guide](https://www.youtube.com/watch?v=N93cTbtLCIM)
 
-[LazyVim Documentation](https://www.lazyvim.org/installation)
+## [LazyVim Documentation](https://www.lazyvim.org/installation)
 
 ## Issues / Plugins that need a second look
 ### open and new folder and observe the error -- does not occur anymore
