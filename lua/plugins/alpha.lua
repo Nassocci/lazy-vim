@@ -1,3 +1,5 @@
+-- splash screen
+
 return {
   "goolord/alpha-nvim", --referency existing plugin that lazy vim is already using
   opts = function(_, opts) --the opts function allows us to take the existing options that where definded elsewhere and

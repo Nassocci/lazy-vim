@@ -150,3 +150,6 @@ vim.keymap.set("n", "<C-p>", "<Cmd>MarkdownPreviewToogle<CR>", { silent = true }
 vim.keymap.set("n", "P", function()
   vim.cmd("put")
 end)
+-- vim.keymap.set("n", "<space>S", function()
+--   vim.fn.execute("z=")
+-- end, { desc = "Show spelling suggestions" })

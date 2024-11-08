@@ -1,0 +1,9 @@
+lua/config/keymaps.lua
+README.md
+lua/plugins/markdown-preview.lua
+lua/plugins/icon-picker.lua
+lua/plugins/telescope.lua
+lua/plugins/harpoon.lua
+lua/config/options.lua
+lua/config/autocmds.lua
+/home/nassocci/.config/tmux/tmux.conf

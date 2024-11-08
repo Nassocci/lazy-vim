@@ -4,7 +4,20 @@ return {
   dependencies = {
     "nvim-lua/plenary.nvim",
   },
-  config = true,
+  -- config = true,
+  config = function()
+    local screen_width = vim.api.nvim_get_option("columns")
+    local screen_height = vim.api.nvim_get_option("lines")
+    local width_percentage = 0.47
+    local height_percentage = 0.3
+
+    require("harpoon").setup({
+      menu = {
+        width = math.floor(screen_width * width_percentage),
+        height = math.floor(screen_height * height_percentage),
+      },
+    })
+  end,
   keys = {
     { "<leader>a", "<cmd>lua require('harpoon.mark').add_file()<cr>", desc = "Mark file with harpoon" },
     { "<C-e>", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", desc = "Show harpoon marks" },
