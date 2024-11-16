@@ -1,4 +1,3 @@
-# TEST commit
 # Install Neovim
 
 [GitHub](https://github.com/neovim/neovim/releases/tag/v0.10.2)
