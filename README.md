@@ -1,3 +1,18 @@
+# Install Neovim
+
+[GitHub](https://github.com/neovim/neovim/releases/tag/v0.10.2)
+## AppImage
+1. Download nvim.appimage
+Run `chmod u+x nvim.appimage && ./nvim.appimage`
+2. If your system does not have FUSE you can extract the appimage:
+```
+./nvim.appimage --appimage-extract
+./squashfs-root/usr/bin/nvim
+```
+3. Create a Symlink Instead of Moving
+`sudo ln -s /home/nassocci/Downloads/squashfs-root/usr/bin/nvim /usr/bin/nvim`
+
+
 # [YT Guide](https://www.youtube.com/watch?v=N93cTbtLCIM)
 
 ## [LazyVim Documentation](https://www.lazyvim.org/installation)
