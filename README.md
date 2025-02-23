@@ -21,6 +21,14 @@ Run `chmod u+x nvim.appimage && ./nvim.appimage`
 ## Issues / Plugins that need a second look
 ### open and new folder and observe the error -- does not occur anymore
 
+### rest.nvim 
+hererocks needs `sudo apt-get install libreadline-dev`
+install lua 5.1 
+```
+sudo apt update
+sudo apt install lua5.1 liblua5.1-0 liblua5.1-0-dev
+```
+`sudo ln -s /usr/bin/lua5.1 /usr/local/bin/lua`
 
 
 # Fix unexpected behavior

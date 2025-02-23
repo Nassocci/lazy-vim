@@ -147,6 +147,12 @@ vim.keymap.set("n", "<C-s>", "<Cmd>MarkdownPreview<CR>", { silent = true })
 vim.keymap.set("n", "<M-s>", "<Cmd>MarkdownPreviewStop<CR>", { silent = true })
 vim.keymap.set("n", "<C-p>", "<Cmd>MarkdownPreviewToogle<CR>", { silent = true })
 
+-- rest.nvim
+-- vim.keymap.set("n", "<leader>rr", "<cmd>Rest run<CR>", { silent = true })
+vim.keymap.set("n", "<leader>rr", function()
+  require("kulala").run()
+end, { noremap = true, silent = false, desc = "Run Request" })
+
 vim.keymap.set("n", "P", function()
   vim.cmd("put")
 end)
