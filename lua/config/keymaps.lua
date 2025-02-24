@@ -131,8 +131,8 @@ vim.api.nvim_set_keymap(
 vim.api.nvim_set_keymap("n", "<leader>dp", "<cmd>lua vim.diagnostic.goto_prev()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>dn", "<cmd>lua vim.diagnostic.goto_next()<CR>", { noremap = true, silent = true })
 -- The following command requires plug-ins "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim", and optionally "kyazdani42/nvim-web-devicons" for icon support
+-- telescope keybindings
 vim.api.nvim_set_keymap("n", "<leader>dd", "<cmd>Telescope diagnostics<CR>", { noremap = true, silent = true })
-
 -- tmux
 vim.keymap.set("n", "<C-h>", "<Cmd>NvimTmuxNavigateLeft<CR>", { silent = true })
 vim.keymap.set("n", "<C-j>", "<Cmd>NvimTmuxNavigateDown<CR>", { silent = true })
@@ -147,7 +147,58 @@ vim.keymap.set("n", "<C-s>", "<Cmd>MarkdownPreview<CR>", { silent = true })
 vim.keymap.set("n", "<M-s>", "<Cmd>MarkdownPreviewStop<CR>", { silent = true })
 vim.keymap.set("n", "<C-p>", "<Cmd>MarkdownPreviewToogle<CR>", { silent = true })
 
--- rest.nvim
+-- Replace harpoon with telescope for search/preview window
+-- Enable line numbers in Telescope preview window
+vim.cmd("autocmd User TelescopePreviewerLoaded setlocal number")
+-- Live Grep (Root Dir) - No input prompt, starts searching instantly
+vim.keymap.set("n", "<leader>sg", function()
+  require("telescope.builtin").live_grep({ cwd = vim.loop.cwd() })
+end, { noremap = true, silent = true, desc = "Live Grep (Root Dir)" })
+
+-- Live Grep (cwd) - No input prompt, searches in current working directory
+vim.keymap.set("n", "<leader>SG", function()
+  require("telescope.builtin").live_grep({ cwd = vim.fn.getcwd() })
+end, { noremap = true, silent = true, desc = "Live Grep (cwd)" })
+
+-- Find Files (Root Dir)
+vim.keymap.set("n", "<leader>ff", function()
+  require("telescope.builtin").find_files({ cwd = vim.loop.cwd() })
+end, { noremap = true, silent = true, desc = "Find Files (Root Dir)" })
+
+-- Find Files (cwd)
+vim.keymap.set("n", "<leader>fF", function()
+  require("telescope.builtin").find_files({ cwd = vim.fn.getcwd() })
+end, { noremap = true, silent = true, desc = "Find Files (cwd)" })
+
+-- Find Current File
+vim.keymap.set("n", "<leader>fc", function()
+  require("telescope.builtin").find_files({ default_text = vim.fn.expand("%:t") })
+end, { noremap = true, silent = true, desc = "Find Current File" })
+
+-- Find All Files (including hidden)
+vim.keymap.set("n", "<leader>fa", function()
+  require("telescope.builtin").find_files({ hidden = true })
+end, { noremap = true, silent = true, desc = "Find All Files" })
+
+-- Recent Files (Root Dir) - Lists recently opened files globally
+vim.keymap.set("n", "<leader>fr", function()
+  require("telescope.builtin").oldfiles({ cwd = vim.loop.cwd() })
+end, { noremap = true, silent = true, desc = "Recent (Root Dir)" })
+
+-- Recent Files (cwd) - Lists recently opened files in current directory
+vim.keymap.set("n", "<leader>fR", function()
+  require("telescope.builtin").oldfiles({ cwd = vim.fn.getcwd() })
+end, { noremap = true, silent = true, desc = "Recent (cwd)" })
+
+-- Keybinding to Source Current File Instantly
+vim.keymap.set("n", "<leader>fs", function()
+  -- Get the full file path of the current buffer
+  local filepath = vim.fn.expand("%:p")
+  -- Open command-line window and prefill with :so <file>
+  vim.api.nvim_feedkeys(":so " .. filepath, "n", true)
+end, { noremap = true, silent = true, desc = "Source Current File" })
+
+-- rest.nvim 
 -- vim.keymap.set("n", "<leader>rr", "<cmd>Rest run<CR>", { silent = true })
 vim.keymap.set("n", "<leader>rr", function()
   require("kulala").run()

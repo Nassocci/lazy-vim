@@ -1,12 +1,16 @@
 -- change some telescope options and a keymap to browse plugin files
 return {
   "nvim-telescope/telescope.nvim",
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+  },
   keys = {
     -- add a keymap to browse plugin files
-    -- stylua: ignore
     {
       "<leader>fp",
-      function() require("telescope.builtin").find_files({ cwd = require("lazy.core.config").options.root }) end,
+      function()
+        require("telescope.builtin").find_files({ cwd = require("lazy.core.config").options.root })
+      end,
       desc = "Find Plugin File",
     },
   },
@@ -15,6 +19,7 @@ return {
       defaults = {
         mappings = {
           i = {
+            -- ["<C-r>"] = require("telescope.actions").resume,
             -- Scroll up in the preview window
             ["<C-k>"] = require("telescope.actions").preview_scrolling_up,
             -- Scroll down in the preview window
